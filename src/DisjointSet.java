@@ -1,8 +1,8 @@
 public class DisjointSet {
-    int size;
+    private int[] size;
 
     public DisjointSet(int size) {
-        this.size = size;
+        this.size = new int[size];
     }
 
 
