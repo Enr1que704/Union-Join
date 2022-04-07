@@ -1,11 +1,12 @@
-import java.util.Arrays;
 
 public class DisjointSet {
     private int[] size;
 
     public DisjointSet(int size) {
         this.size = new int[size];
-        Arrays.fill(this.size, -1);
+        for (int i = 0; i < size; i++) {
+            this.size[i] = -1;
+        }
     }
 
 

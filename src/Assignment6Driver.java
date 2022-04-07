@@ -5,15 +5,39 @@ public class Assignment6Driver {
     public static void main(String[] args) {
 
         //testGame();
-        //playGame("moves1.txt");
+        playGame("moves1.txt");
         //System.out.println();
         //playGame("moves2.txt");
     }
 
     private static void playGame(String filename) {
         File file = new File(filename);
+        int moveTracker = 0;
+        HexGame game = new HexGame(11);
         try (Scanner input = new Scanner(file)) {
-            // TODO: Write some good stuff here
+            while (input.hasNextLine()) {
+                int move = Integer.parseInt(input.nextLine());
+                if (moveTracker % 2 == 0) { // BLUE'S TURN
+
+
+
+
+
+
+//                    game.playBlue(0, false);
+                } else { // RED'S TURN
+
+
+
+
+//                    game.playRed(0, false);
+                }
+
+
+
+
+                moveTracker++;
+            }
         } catch (java.io.IOException ex) {
             System.out.println("An error occurred trying to read the moves file: " + ex);
         }
