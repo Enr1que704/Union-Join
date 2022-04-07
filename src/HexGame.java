@@ -30,7 +30,7 @@ public class HexGame {
 
     public boolean playBlue(int position, boolean displayNeighbors) {
         int realPos = position - 1;
-        
+
         if (gameboard.find(LEFT_EDGE) == gameboard.find(RIGHT_EDGE)) {
             return true;
         } else {
