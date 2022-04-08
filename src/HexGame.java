@@ -2,8 +2,8 @@
 import java.util.ArrayList;
 
 public class HexGame {
-    private int size;
-    private DisjointSet gameboard;
+    public int size;
+    public DisjointSet gameboard;
     private int TOP_EDGE;
     private int BOTTOM_EDGE;
     private int LEFT_EDGE;
@@ -29,15 +29,15 @@ public class HexGame {
     }
 
     public boolean playBlue(int position, boolean displayNeighbors) {
-        int realPos = position - 1;
+        if (displayNeighbors) {
+            System.out.println("Cell " + position + ": " );
+        }
 
         if (gameboard.find(LEFT_EDGE) == gameboard.find(RIGHT_EDGE)) {
             return true;
         } else {
-
+            return false;
         }
-
-        return false;
     }
 
     public boolean playRed(int position, boolean displayNeighbors) {
