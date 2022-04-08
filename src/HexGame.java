@@ -8,7 +8,7 @@ public class HexGame {
     private int BOTTOM_EDGE;
     private int LEFT_EDGE;
     private int RIGHT_EDGE;
-    private int[][] colorArray;
+    private int[] colorArray;
     public Color colorType;
 
     public enum Color {
@@ -25,12 +25,12 @@ public class HexGame {
         BOTTOM_EDGE = totalTiles + 2;
         LEFT_EDGE = totalTiles + 3;
         RIGHT_EDGE = totalTiles + 4;
-        colorArray = new int[dimensions][dimensions];
+        colorArray = new int[totalTiles];
     }
 
     public boolean playBlue(int position, boolean displayNeighbors) {
         if (displayNeighbors) {
-            System.out.println("Cell " + position + ": " );
+            System.out.println("Cell " + position + ": [" + getNeighborsBlue(position) + "]");
         }
 
         if (gameboard.find(LEFT_EDGE) == gameboard.find(RIGHT_EDGE)) {
@@ -41,8 +41,14 @@ public class HexGame {
     }
 
     public boolean playRed(int position, boolean displayNeighbors) {
-        int realPos = position - 1;
-        return true;
+        if (displayNeighbors) {
+            System.out.println("Cell " + position + ": [" + getNeighborsRed(position) + "]");
+        }
+        if (gameboard.find(TOP_EDGE) == gameboard.find(BOTTOM_EDGE)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 //    public Color[] getGrid() {
